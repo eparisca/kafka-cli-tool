@@ -19,8 +19,6 @@ source kafka_tool.cfg
 # Timeout to allow configuration changes 
 readonly timeout=300
 
-topic_names=()
-
 # Usage instructions
 function usage() {  
     echo "
@@ -37,13 +35,16 @@ OPTIONS
     -h      Print this help message and exit.
 
 EXAMPLES
-    ${0} -t \"historical-esf-search\"
-    ${0} -t \"historical-esf-search\" -t \"organization-management\" -t \"account-management\"
+    ${0} -t \"test-topic\"
+    ${0} -t \"test-topic-1\" -t \"test-topic-2\" -t \"test-topic-3\"
 
 CONFIGURATION
     This script relies on kafka_tool.cfg for environment configuration.
 "
 }
+
+declare -d topic_names=()
+
 # Parse arguments
 force=false
 while getopts "t:fh" opt; do
