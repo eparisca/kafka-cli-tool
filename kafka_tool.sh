@@ -126,6 +126,14 @@ function purge_topic {
 ########################################
 function delete_topic() {
     local topic_name=$1
+    
+    # Prompt user before proceeding
+    echo "WARNING: Deleting a topic is irreversible. "
+    read -p "Are you sure that you want to proceed? [y/n]: " answer
+    if [[ "${answer}" != "y" ]]; then
+        echo "Cancelled."
+        exit 0
+    fi
     ${kafka_dir}/kafka-topics.sh --zookeeper ${zookeeper} --delete --topic ${topic_name}
     # ${zookeeper_dir}/zkCli.sh ${zookeeper} <<< "rmr /brokers/topics/${topic_name}"
 }
