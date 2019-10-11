@@ -145,7 +145,7 @@ function delete_topic() {
 function consume_topic() {
     local topic_name=$1
     #${kafka_dir}/kafka-console-consumer.sh --zookeeper ${zookeeper} --topic ${topic_name} --timeout-ms 2000
-    ${kafka_dir}/kafka-console-consumer.sh --bootstrap-server ${broker} --topic ${topic_name} --offset ${offset} --timeout-ms 2000
+    ${kafka_dir}/kafka-console-consumer.sh --bootstrap-server ${broker} --topic ${topic_name} --timeout-ms 2000
 }
 
 ########################################
