@@ -191,7 +191,7 @@ while getopts "hlg:t:c:a:m:n:r:d:" opt; do
             ;;
         t)  describe_topic "${OPTARG}"
             ;;
-        c)  consume_topic "${OPTARG}"
+        a)  consume_topic "${OPTARG}"
             ;;
         m)  consume_topic_at "${OPTARG}" $3 $4
             ;;
