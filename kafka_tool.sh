@@ -183,7 +183,7 @@ function rewind_offsets() {
     rm ${temp_filename}
 }
 
-while getopts "hlg:t:c:m:n:r:d:" opt; do
+while getopts "hlg:t:c:a:m:n:r:d:" opt; do
     case ${opt} in
         l)  list_consumer_groups
             ;;
